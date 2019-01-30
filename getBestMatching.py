@@ -61,6 +61,12 @@ class GetBestMatching(object):
         return max_val, max_loc, img
 
     def getWhere(self, img, showimg=0):
+        '''
+
+        :param img: 输入图片路径
+        :param showimg: 是否展示图片（调试时需要设置为1）
+        :return: 返回最佳匹配点，以及图片（resize后的）或者 0 和 原图img
+        '''
         # 1、保存原始未处理图像便于画图
         img = cv.imread(img)
         c_img = img.copy()

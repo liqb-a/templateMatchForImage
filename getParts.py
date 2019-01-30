@@ -158,11 +158,17 @@ class GetParts(object):
         return img
 
     def getTarget(self, img, tl):
-        # 必须重写次函数
+        # 必须重写此函数
         ptdic = {}
         return img, ptdic
 
     def getAllParts(self, showimg=0, getimg=0):
+        '''
+        类的调用入口
+        :param showimg: 是否展示图片，调试时设置为1
+        :param getimg: 是否需要返回图片
+        :return:
+        '''
         self.img, ptdic = self.getTarget(self.img, self.tl)
         if showimg:
             cv.namedWindow("match", cv.WINDOW_AUTOSIZE)
